@@ -4,7 +4,8 @@ const userController = require('../controller/usercontroller');
 
 // Create a user
 // post request http://localhost:7000/users on this api with below json data
-  // "name": "",
+  // {
+    //"name": "",
   // "email": "",
   // "age": ,
   // "parentage": "",
@@ -15,7 +16,8 @@ const userController = require('../controller/usercontroller');
   //         "year": "",
   //
   //     }
-  // ],
+  // ]
+//}
 router.post('/users', userController.create);
 
 // Get all users
@@ -31,6 +33,7 @@ router.get('/users/:age', userController.getBySameAge);
 router.get('/users/age/:sortOrder', userController.getAllUsersByAgeDscAsc);
 // Update a user by email
 //http://localhost:7000/users/email api to test update by Email
+// {"filed name": "data"} json format in which u want to update data
 router.put('/users/:email', userController.updateByEmail);
 
 module.exports = router;
