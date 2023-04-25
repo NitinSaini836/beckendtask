@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const {config} = require('dotenv')
+config()
  module.exports.connection=function()
  {
- mongoose.connect('mongodb+srv://root:1234@cluster0.ww8gmhn.mongodb.net/?retryWrites=true&w=majority')
+ mongoose.connect(process.env.MONGODB_URL)
  .then(function()
  {
    console.log("mongo is connected")
